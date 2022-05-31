@@ -1,5 +1,3 @@
-utils.py
-
 # python file having all utility functions used by GNCmun course
 import numpy as np
 import math 
