@@ -1,6 +1,7 @@
 # this python code has all the animation visualizations used in the course
 
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from IPython.display import clear_output
@@ -8,7 +9,7 @@ import matplotlib.pyplot as plt
 from numpy.random import randn
 from time import sleep
 from matplotlib import rc
-import matplotlib as mpl
+
 
 rc('animation', html='jshtml')
 
