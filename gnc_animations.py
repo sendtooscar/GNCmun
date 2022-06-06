@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from numpy.random import randn
 from time import sleep
 from matplotlib import rc
+import matplotlib as mpl
 
 rc('animation', html='jshtml')
 
