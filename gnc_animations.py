@@ -39,6 +39,7 @@ def animate_isl_pendulum(X,U,T,param,fps,duration):
 
 def animate_2Dbot(X,U,T,param,robot_scale,frame_num,speedup):
   robot_scale =0.5;
+  dt = param[0]
   fig = plt.figure()
   ax = fig.add_subplot(aspect='equal')
   ax.set_xlim(-2.2, 2.2)
