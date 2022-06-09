@@ -144,8 +144,9 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
   # facecolors='red', linewidths=0, edgecolors='r', alpha=.5))
   cube = Poly3DCollection(verts,  facecolors='cyan', linewidths=0.2, edgecolors='c', alpha=1)
   ax.add_collection3d(cube)
-
+   
   Rotmat = Rot.as_matrix().T
+  print(Rotmat)
   col = ['r','g','b']
   arr_vec =[]
   i=0
