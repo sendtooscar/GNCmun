@@ -140,10 +140,10 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
   [Z[4],Z[7],Z[3],Z[0]]]
 
   # plot sides
-  #cube = ax.add_collection3d(Poly3DCollection(verts, 
+  # cube = ax.add_collection3d(Poly3DCollection(verts, 
   # facecolors='red', linewidths=0, edgecolors='r', alpha=.5))
-  #cube = Poly3DCollection(verts,  facecolors='cyan', linewidths=0.2, edgecolors='c', alpha=1)
-  #ax.add_collection3d(cube)
+  cube = Poly3DCollection(verts,  facecolors='cyan', linewidths=0.2, edgecolors='c', alpha=1)
+  ax.add_collection3d(cube)
    
   Rotmat = Rot.as_matrix().T
   #print(Rotmat)
@@ -202,7 +202,7 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
     [Z[1],Z[2],Z[6],Z[5]],
     [Z[4],Z[7],Z[3],Z[0]]]
 
-    #cube.set_verts(verts)  #ok
+    cube.set_verts(verts)  #ok
     handle_text.set_text('$(%.1f^{\circ},%.1f^{\circ},%.1f^{\circ})$'%(round(Rot.compute_roll_radians()/np.pi*180,1),round(Rot.compute_pitch_radians()/np.pi*180,1),round(Rot.compute_yaw_radians()/np.pi*180,1)))
 
     Rotmat = Rot.as_matrix().T
@@ -218,8 +218,8 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
 
   ani = animation.FuncAnimation(fig, animate, frames=frame_num, repeat=True, interval=int(dt*1000*skip/speedup))
   print("Number of frames :",frame_num)
-  print(arr_vec[2]._verts3d)
-  print(arr_vec[1]._verts3d)
-  print(arr_vec[1].get_zorder())
+  #print(arr_vec[2]._verts3d)
+  #print(arr_vec[1]._verts3d)
+  #print(arr_vec[1].get_zorder())
   plt.close()
   return ani
