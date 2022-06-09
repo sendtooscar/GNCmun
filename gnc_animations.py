@@ -177,7 +177,7 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
   arr_vec[1].set_zorder(4)
   arr_vec[2].set_zorder(4)
 
-  print(arr_vec[2])
+  #print(arr_vec[2])
 
   ax.plot([-0.05,-0.05],[0,0],[0,0],'ok',alpha=0.5,zorder=5)
 
