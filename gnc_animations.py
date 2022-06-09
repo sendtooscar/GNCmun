@@ -217,5 +217,8 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
 
   ani = animation.FuncAnimation(fig, animate, frames=frame_num, repeat=True, interval=int(dt*1000*skip/speedup))
   print("Number of frames :",frame_num)
+  print(arr_vec[2]._verts3d)
+  print(arr_vec[1]._verts3d)
+  print(arr_vec[1].get_zorder())
   plt.close()
   return ani
