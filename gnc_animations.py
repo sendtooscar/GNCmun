@@ -156,6 +156,7 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
                 lw=2, arrowstyle="-|>", color=col[i],alpha=0.5)
     arr_vec.append(arr)
     ax.add_artist(arr_vec[i])
+    i = i + 1
     
   ax.set_xlim(-7,7)
   ax.set_ylim(-7,7)
