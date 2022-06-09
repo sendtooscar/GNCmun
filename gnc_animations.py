@@ -146,7 +146,7 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
   ax.add_collection3d(cube)
    
   Rotmat = Rot.as_matrix().T
-  print(Rotmat)
+  #print(Rotmat)
   col = ['r','g','b']
   arr_vec =[]
   i=0
@@ -175,6 +175,8 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
   arr_vec[0].set_zorder(4)
   arr_vec[1].set_zorder(4)
   arr_vec[2].set_zorder(4)
+
+  print(arr_vec[2])
 
   ax.plot([-0.05,-0.05],[0,0],[0,0],'ok',alpha=0.5,zorder=5)
 
@@ -215,5 +217,5 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
 
   ani = animation.FuncAnimation(fig, animate, frames=frame_num, repeat=True, interval=int(dt*1000*skip/speedup))
   print("Number of frames :",frame_num)
-  #plt.close()
+  plt.close()
   return ani
