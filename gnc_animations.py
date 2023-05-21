@@ -93,9 +93,15 @@ def animate_ahrs(X,U,T,param,frame_num,speedup):
 
       def draw(self, renderer):
           xs3d, ys3d, zs3d = self._verts3d
-          xs, ys, zs = proj3d.proj_transform(xs3d, ys3d, zs3d, renderer.M)
+          xs, ys, zs = proj3d.proj_transform(xs3d, ys3d, zs3d, self.axes.M)
           self.set_positions((xs[0],ys[0]),(xs[1],ys[1]))
           FancyArrowPatch.draw(self, renderer)
+
+      def do_3d_projection(self, render=None):
+          xs3d, ys3d, zs3d = self._verts3d
+          xs, ys, zs = proj3d.proj_transform(xs3d, ys3d, zs3d, self.axes.M)
+          self.set_positions((xs[0],ys[0]),(xs[1],ys[1]))
+          return np.min(zs)
 
   dt = param[0]
   skip = np.floor(len(X)/frame_num)
